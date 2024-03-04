@@ -3,8 +3,11 @@ name: Minimal Workflow Test
 on: [push]
 #
 jobs:
-  checkout-code:
+  run-selenium-script:
     runs-on: ubuntu-latest
+
+    container: 
+      image: selenium/standalone-chrome
 
     steps:
         - name: Checkout repository
