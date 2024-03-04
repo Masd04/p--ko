@@ -10,5 +10,8 @@ jobs:
         image: selenium/standalone-chrome
   
       steps:
-        - name: Run a simple command
-          run: echo "Hello from the container!"
+        - name: Checkout repository
+          uses: actions/checkout@v4
+  
+        - name: Run minimal Selenium script
+          run: python minimal_selenium.py
