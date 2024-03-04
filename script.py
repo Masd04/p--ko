@@ -13,7 +13,7 @@ options.add_argument('--disable-gpu')  # Applicable to windows os only
 options.add_argument('--disable-extensions')
 
 # Repeat the action 2 times
-for _ in range(2):
+for _ in range(1):
     # Initialize the driver
     driver = webdriver.Chrome(options=options)
 
