@@ -1,0 +1,11 @@
+name: Minimal Workflow Test
+
+on: [push]
+
+jobs:
+  checkout-code:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
