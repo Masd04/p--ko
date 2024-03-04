@@ -8,6 +8,7 @@ jobs:
   
       container:
         image: selenium/standalone-chrome
+        options: --user root
   
       steps:
         - name: Checkout repository
