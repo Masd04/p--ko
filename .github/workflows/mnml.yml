@@ -1,20 +1,31 @@
-name: Minimal Workflow Test
+name: Selenium Workflow Test
 
 on: [push]
-##
+
 jobs:
-    run-selenium-script:
-      runs-on: ubuntu-latest
-  
-      container:
+  run-selenium-script:
+    runs-on: ubuntu-latest
+
+    services:
+      selenium:
         image: selenium/standalone-chrome
-  
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v4
-  
-        - name: Install Python dependencies
-          run: pip3 install -r requirements.txt
-  
-        - name: Run minimal Selenium script
-          run: python3 minimal_selenium.py
+        ports:
+          - 4444:4444
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install selenium
+
+      - name: Run Selenium script
+        run: |
+          python minimal_selenium.py

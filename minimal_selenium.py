@@ -1,12 +1,13 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-options = Options()
-options.headless = True
+# Set up selenium to connect to the service container
+selenium_grid_url = "http://localhost:4444/wd/hub"
+driver = webdriver.Remote(
+    command_executor=selenium_grid_url,
+    desired_capabilities=DesiredCapabilities.CHROME,
+)
 
-driver = webdriver.Chrome(options=options)
 driver.get("http://www.google.com")
 print(driver.title)
 driver.quit()
