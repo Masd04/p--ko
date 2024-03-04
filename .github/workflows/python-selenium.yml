@@ -1,8 +1,11 @@
 name: Selenium Script
 
 on:
+  push:
+    branches:
+      - main  # Assuming 'main' is your default branch, change if necessary
   schedule:
-    # Runs at 12 noon UTC every day
+    # Runs at 23:00 UTC (6 PM Miami time without daylight saving)
     - cron: '0 23 * * *'
 
 jobs:
