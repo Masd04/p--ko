@@ -24,5 +24,4 @@ jobs:
         run: echo "Hello from the container!"
 
       - name: Run minimal Selenium script
-        run: |
-          python minimal_selenium.py
+        run: python3 minimal_selenium.py
