@@ -7,6 +7,6 @@ options = Options()
 options.headless = True
 
 driver = webdriver.Chrome(options=options)
-driver.get("http://www.example.com")
+driver.get("http://www.google.com")
 print(driver.title)
 driver.quit()
