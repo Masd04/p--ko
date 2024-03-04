@@ -3,25 +3,18 @@ name: Minimal Workflow Test
 on: [push]
 #
 jobs:
-  run-selenium-script:
-    runs-on: ubuntu-latest
-
-    container:
-      image: selenium/standalone-chrome
-      options: --user root
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Print current user
-        run: whoami
-
-      - name: List directory permissions
-        run: ls -l
-
-      - name: Run a simple command
-        run: echo "Hello from the container!"
-
-      - name: Run minimal Selenium script
-        run: python3 minimal_selenium.py
+    run-selenium-script:
+      runs-on: ubuntu-latest
+  
+      container:
+        image: selenium/standalone-chrome
+  
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+  
+        - name: Install Python dependencies
+          run: pip3 install -r requirements.txt
+  
+        - name: Run minimal Selenium script
+          run: python3 minimal_selenium.py
