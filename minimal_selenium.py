@@ -1,6 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
 
 # Set up Chrome options
 chrome_options = Options()
@@ -16,4 +20,16 @@ driver = webdriver.Remote(
 
 driver.get("https://bakule.vercel.app/")
 print(driver.title)
+
+# Wait for the element with the ID 'card' to be clickable
+wait = WebDriverWait(driver, 10)  # Wait for up to 10 seconds
+element_to_click = wait.until(EC.element_to_be_clickable((By.ID, 'card')))
+
+    # Click the element
+element_to_click.click()
+
+    # Keep the browser open for 1.5 seconds after the click
+time.sleep(1.5)
+
+    # Close the browser
 driver.quit()
