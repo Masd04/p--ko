@@ -28,8 +28,12 @@ element_to_click = wait.until(EC.element_to_be_clickable((By.ID, 'card')))
     # Click the element
 element_to_click.click()
 
+
+
     # Keep the browser open for 1.5 seconds after the click
 time.sleep(1.5)
+
+print(driver.title)
 
     # Close the browser
 driver.quit()

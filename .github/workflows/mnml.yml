@@ -1,7 +1,7 @@
 name: Selenium Workflow Test
 
 on: [push]
-##
+
 jobs:
   run-selenium-script:
     runs-on: ubuntu-latest
