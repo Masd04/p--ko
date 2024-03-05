@@ -14,6 +14,6 @@ driver = webdriver.Remote(
     options=chrome_options
 )
 
-driver.get("http://www.google.com")
+driver.get("https://bakule.vercel.app/")
 print(driver.title)
 driver.quit()
