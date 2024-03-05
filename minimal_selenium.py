@@ -1,11 +1,17 @@
 from selenium import webdriver
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 
-# Set up selenium to connect to the service container
-selenium_grid_url = "http://localhost:4444/wd/hub"
+# Set up Chrome options
+chrome_options = Options()
+chrome_options.headless = True  # Run in headless mode
+# Add any other necessary options here
+
+# Selenium 4.x uses the 'options' argument instead of 'desired_capabilities'
+s = Service('chromedriver-win64/chromedriver.exe')  # Specify path to chromedriver if not in PATH
 driver = webdriver.Remote(
-    command_executor=selenium_grid_url,
-    desired_capabilities=DesiredCapabilities.CHROME,
+    command_executor='http://localhost:4444/wd/hub',
+    options=chrome_options
 )
 
 driver.get("http://www.google.com")
