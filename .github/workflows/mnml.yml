@@ -1,6 +1,11 @@
 name: Selenium Workflow Test
 
-on: [push]
+on:
+    push:
+      branches: [ main ]
+    schedule:
+      # Runs at 23:00 UTC every dayy
+      - cron: '0 1 * * *'
 
 jobs:
   run-selenium-script:
