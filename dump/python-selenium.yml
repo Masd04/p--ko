@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v4 # Update this to the latest version
 
     - name: Set up Python
-      uses: actions/setup-python@v3 # Update this to the latest version
+      uses: actions/setup-python@v5 # Update this to the latest version
       with:
         python-version: '3.x'
 
