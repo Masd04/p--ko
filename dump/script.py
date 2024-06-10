@@ -18,7 +18,7 @@ for _ in range(1):
     driver = webdriver.Chrome(options=options)
 
     # Open a website
-    driver.get('https://bakule.vercel.app/')
+    driver.get('https://commuplat.vercel.app/')
 
     # Wait for the element with the ID 'card' to be clickable
     wait = WebDriverWait(driver, 10)  # Wait for up to 10 seconds
@@ -27,8 +27,8 @@ for _ in range(1):
     # Click the element
     element_to_click.click()
 
-    # Keep the browser open for 1.5 seconds after the click
-    time.sleep(1.5)
+    # Keep the browser open for 10 seconds after the click
+    time.sleep(10)
 
     # Close the browser
     driver.quit()

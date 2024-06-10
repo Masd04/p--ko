@@ -19,7 +19,7 @@ for _ in range(1):
     options=chrome_options
 )
 
-driver.get("https://bakule.vercel.app/")
+driver.get("https://commuplat.vercel.app/")
 print(driver.title)
 
 # Wait for the element with the ID 'card' to be clickable
@@ -31,8 +31,8 @@ element_to_click.click()
 
 
 
-    # Keep the browser open for 1.5 seconds after the click
-time.sleep(1.5)
+    # Keep the browser open for 10 seconds after the click
+time.sleep(10)
 
 print(driver.title)
 
